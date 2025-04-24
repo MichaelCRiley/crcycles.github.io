@@ -22,7 +22,7 @@
   <div class="hamburger" onclick="toggleMenu()">☰</div>
   <ul class="nav-links" id="navLinks">
     <li><a href="#gallery">Gallery</a></li>
-   <li><a href="#!" onclick="openTab(event, 'contact')">Contact</a></li>
+<li><a href="#" onclick="event.preventDefault(); openTabFromNav('contact');">Contact</a></li>
   </ul>
 </nav>
   <header class="hero">
@@ -75,16 +75,32 @@
   <!-- Lightbox2 JS -->
 <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
 <script>
-  function openTab(evt, tabId) {
-    const contents = document.querySelectorAll(".tab-content");
-    const buttons = document.querySelectorAll(".tab-button");
+function openTab(evt, tabId) {
+  const contents = document.querySelectorAll(".tab-content");
+  const buttons = document.querySelectorAll(".tab-button");
 
-    contents.forEach(c => c.classList.remove("active"));
-    buttons.forEach(b => b.classList.remove("active"));
+  contents.forEach(c => c.classList.remove("active"));
+  buttons.forEach(b => b.classList.remove("active"));
 
-    document.getElementById(tabId).classList.add("active");
-    evt.currentTarget.classList.add("active");
-  }
+  document.getElementById(tabId).classList.add("active");
+  if (evt) evt.currentTarget.classList.add("active");
+}
+
+function openTabFromNav(tabId) {
+  const contents = document.querySelectorAll(".tab-content");
+  const buttons = document.querySelectorAll(".tab-button");
+
+  contents.forEach(c => c.classList.remove("active"));
+  buttons.forEach(b => {
+    if (b.getAttribute('onclick').includes(tabId)) {
+      b.classList.add("active");
+    } else {
+      b.classList.remove("active");
+    }
+  });
+
+  document.getElementById(tabId).classList.add("active");
+}
 </script>
 
   // 👇 Scroll the tab section into view smoothly
