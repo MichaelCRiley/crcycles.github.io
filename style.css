@@ -79,3 +79,48 @@ body {
   transform: scale(1.05);
   border-color: #ff4500;
 }
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+  backdrop-filter: blur(10px);
+}
+
+.nav-logo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ff4500;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ff4500;
+}
+
+/* Add spacing to prevent content being hidden under fixed navbar */
+.hero,
+.gallery,
+.contact {
+  padding-top: 80px;
+}
