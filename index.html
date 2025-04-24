@@ -82,10 +82,8 @@ function openTab(evt, tabId) {
   contents.forEach(c => c.classList.remove("active"));
   buttons.forEach(b => b.classList.remove("active"));
 
- document.getElementById(tabId).classList.add("active");
-
-// Smooth scroll to the tab section
-document.getElementById("
+  document.getElementById(tabId).classList.add("active");
+  if (evt) evt.currentTarget.classList.add("active");
 }
 
 function openTabFromNav(tabId) {
@@ -102,6 +100,12 @@ function openTabFromNav(tabId) {
   });
 
   document.getElementById(tabId).classList.add("active");
+
+  // Scroll to the tabs section
+  const tabsSection = document.getElementById('tabs');
+  if (tabsSection) {
+    tabsSection.scrollIntoView({ behavior: 'smooth' });
+  }
 }
 </script>
 }
