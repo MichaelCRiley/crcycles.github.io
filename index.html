@@ -31,7 +31,7 @@
     <p>Custom Builds. Street Style. Garage Grit.</p>
   </div>
 </header>
-<div class="tabs">
+<div class="tabs" id="tabs">
   <div class="tab-buttons">
     <button class="tab-button active" onclick="openTab(event, 'about')">About Me</button>
     <button class="tab-button" onclick="openTab(event, 'services')">Services</button>
@@ -42,7 +42,7 @@
     <h2>About Me</h2>
     <img src="images/ElleandI.jpg" alt="Elle and I" class="center-image">
     <p>
-      My name is Michael Riley and welcome to C & R Cycles! C & R Cycles was born from busted knuckles and built on passion...
+     My name is Michael Riley and welcome to C & R Cycles! C & R Cycles was born from busted knuckles and built on passion. My Fiancé and I have a true love for riding and the adventure that is life on two wheels. I have been blessed with the opportunity to wrench on bikes from every style and major manufacturer. I aim to deliver good quality work that allows other riders to be safe on the road, track, or wherever your next adventure may take you!
     </p>
   </div>
 
@@ -82,8 +82,10 @@ function openTab(evt, tabId) {
   contents.forEach(c => c.classList.remove("active"));
   buttons.forEach(b => b.classList.remove("active"));
 
-  document.getElementById(tabId).classList.add("active");
-  if (evt) evt.currentTarget.classList.add("active");
+ document.getElementById(tabId).classList.add("active");
+
+// Smooth scroll to the tab section
+document.getElementById("
 }
 
 function openTabFromNav(tabId) {
@@ -102,9 +104,6 @@ function openTabFromNav(tabId) {
   document.getElementById(tabId).classList.add("active");
 }
 </script>
-
-  // 👇 Scroll the tab section into view smoothly
-  tab.scrollIntoView({ behavior: 'smooth' });
 }
 </script>
 </body>
