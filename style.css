@@ -213,3 +213,9 @@ body {
 .tab-content.active {
   display: block;
 }
+.center-image {
+  display: block;
+  margin: 0 auto 1rem;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 8px;
