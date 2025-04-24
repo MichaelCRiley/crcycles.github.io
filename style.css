@@ -43,3 +43,29 @@ footer {
   font-size: 0.9rem;
   color: #888;
 }
+
+.gallery {
+  padding: 2rem;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery-img {
+  width: 300px;
+  border-radius: 8px;
+  border: 2px solid #444;
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  border-color: #ff4500;
+}
